@@ -1,0 +1,164 @@
+%% kut_econ_thesis_lualatex.tex
+%%
+%% 高知工科大学 経済・マネジメント学群 卒論テンプレート
+%% R Markdown -> PDF 用
+%%
+%% Author: 矢内 勇生 (Yuki YANAI)  <yanai.yuki@kochi-tech.ac.jp>
+%% Created: 2021-01-23
+
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+
+\documentclass[9pt,a4paper,twocolumn,lualatex,ja=standard]{bxjsarticle}
+\setpagelayout*{top=25truemm,bottom=25truemm,left=15truemm,right=15truemm}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{unicode-math}
+\usepackage{color}
+\usepackage{natbib}
+\bibpunct[:\,]{(}{)}{;}{}{}{,}
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+
+% フォントの設定：OSに依存することなく Rで作った図とフォントを揃えるため、IPAex を採用
+\usepackage[ipaex]{luatexja-preset}
+% 原ノ味フォントを使う場合 -> 上の1行をコメントアウトする
+% macOS でヒラギノフォントを使う場合 -> 2行上のブラケット内の "ipaex" を "hiragino-pron" に変更
+
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} 
+}{}
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} 
+\usepackage{bookmark,hyperref}
+\hypersetup{
+$if(title-meta)$
+  pdftitle={$title-meta$},
+$endif$
+$if(author-meta)$
+  pdfauthor={$author-meta$},
+$endif$
+$if(lang)$
+  pdflang={$lang$},
+$endif$
+$if(subject)$
+  pdfsubject={$subject$},
+$endif$
+$if(keywords)$
+  pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+$endif$
+  bookmarksnumbered=true,
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=cyan,
+  citecolor=teal,
+  hyperfootnotes=true,
+  setpagesize=false,
+  pdfcreator={LaTeX via pandoc from R Markdown}}
+\urlstyle{same} 
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{bookmark}
+\usepackage{indentfirst}
+\parindent=1em
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{.}{-1}}
+\usepackage{caption}
+\captionsetup[table]{name=表}
+\captionsetup[figure]{name=図}
+\usepackage{selnolig}  
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % 
+ {% 
+  \setlength{\parindent}{0pt}
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+$if(title)$
+  \title{\vspace{-28pt}{\Large\gtfamily\bfseries $title$}$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+$if(subtitle)$
+  \usepackage{etoolbox}
+  \makeatletter
+  \providecommand{\subtitle}[1]{
+    \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+  }
+  \makeatother
+  \subtitle{\large\gtfamily\bfseries \vskip 0.4em $subtitle$\vspace{-8pt}}
+$endif$
+\author{\large$author$\\ \vspace{-4pt}高知工科大学　経済・マネジメント学群}
+\date{\phantom{AAA}} % 所属と本文の間のスペースを確保するために挿入
+
+% 節と小節のタイトルのフォントサイズを設定
+\usepackage{titlesec}
+\titleformat*{\section}{\large\selectfont\bfseries}
+\titleformat*{\subsection}{\normalsize\selectfont\bfseries}
+\titlespacing*{\section}{0pt}{2em}{4pt}
+\titlespacing*{\subsection}{0pt}{1.5em}{4pt}
+
+\addtolength{\footskip}{10mm} % ページ番号を下にずらす
+\renewcommand{\baselinestretch}{1.2} % 行間を調整
+\renewcommand{\thefootnote}{\arabic{footnote}} % 脚注番号のラベルを変更
+
+
+\begin{document}
+
+$if(has-frontmatter)$
+  \frontmatter
+$endif$
+$if(title)$
+  \maketitle
+$endif$
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+$for(include-before)$
+  $include-before$
+$endfor$
+
+$if(linestretch)$
+  \setstretch{$linestretch$}
+$endif$
+
+$if(has-frontmatter)$
+  \mainmatter
+$endif$
+
+$body$
+
+\bibliographystyle{jecon-unicode}
+\bibliography{myrefs}
+
+\end{document}
