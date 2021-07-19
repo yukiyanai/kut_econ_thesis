@@ -14,10 +14,19 @@
 
 ## 準備
 
-###  Rで **bookdown** パッケージをインストールする。
+### IPAexフォントをインストールする
+
+- 既にインストールされているならこの作業は不要
+- インストール方法はテンプレートファイルに書いてある
+
+
+###  Rで必要なパッケージをインストールする。
+
+**bookdown** パッケージが必要なのでインストールする。他にも追加パッケージのインストールを促されたら、指示に従ってインストールする（RStudio を使っているなら、ポップアップの指示を読んで"Yes" をクリックすればよい）。
 ```
 install.packages("bookdown", dependencies = TRUE)
 ```
+
 
 ### LaTeX一式をインストールする
 
@@ -30,21 +39,24 @@ tinytex::install_tinytex()
 
 ###  卒論用の R Project を作る
 
-R Studio から通常どおりにプロジェクトを作る。既存のプロジェクトを使ってもかまわない。
+R Studio からいつもどおりプロジェクトを作る。既存のプロジェクトを使ってもかまわない。
 
 
 ### プロジェクトフォルダの中に必要なファイル作る・保存する
 
-1. 卒論本体の Rmd ファイル
-  - テンプレート（`kut_econ_thesis_rmarkdown.Rmd`）に従って書く。
-2. `kut_econ_thesis_lualatex.tex`
-3. `myrefs.bib`（このファイル名で、中身は自分で作る）
-4. `jecon-unicode.bst`：武田史郎さんが作ったものを使う。[ココ](https://github.com/ShiroTakeda/jecon-bst/tree/master/unicode) から入手する。
+1. 卒論本体の Rmd ファイルを作る
+  - テンプレート（`kut_econ_thesis_rmarkdown.Rmd`）に従って書く
+  - ファイル名は自由に付けてよい
+  - 本文、分析用コード、図表を作るコードをすべてこのファイルに書く
+2. `kut_econ_thesis_lualatex.tex` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
+3. `myrefs.bib` を作り、1のRmdファイルと同じフォルダ（同じ階層）に保存する
+  - 必ずこのファイル名にする（ファイル名を変える場合は tex テンプレートの修正が必要）
+  - ファイル自体はここで配布するものではなく、ZoteroやJabRefなどを使って自分で作る
+4. `jecon-unicode.bst` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
+  - 武田史郎さんが作った文献スタイルファイル
+  - [ココ](https://github.com/ShiroTakeda/jecon-bst/tree/master/unicode) から入手する。
+    - 誤って HTML を保存しないように注意
 
-### IPAexフォントをインストールする
-
-- 既にインストールされているならこの作業は不要
-- インストール方法はテンプレートファイルに書いてある
 
 ---
 
