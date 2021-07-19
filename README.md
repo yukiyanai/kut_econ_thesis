@@ -9,7 +9,7 @@
 - bibファイルのサンプル：[myrefs.bib](myrefs.bib)
 - 正しくknit できたPDFのサンプル：[kut_econ_thesis_rmd_sample.pdf](kut_econ_thesis_rmd_sample.pdf)
 
-詳しい使い方はテンプレート内に書いてあるので、よく読んで使ってくたさい。
+詳しい使い方はテンプレート内に書いてあるので、よく読んで使ってください。
 
 
 ## 準備
@@ -54,10 +54,12 @@ R Studio からいつもどおりプロジェクトを作る。既存のプロ�
   - ファイル自体はここで配布するものではなく、ZoteroやJabRefなどを使って自分で作る
 4. `jecon-unicode.bst` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
   - 武田史郎さんが作った文献スタイルファイル
-  - [ココ](https://github.com/ShiroTakeda/jecon-bst/tree/master/unicode) から入手する。
+  - [ココ](https://github.com/ShiroTakeda/jecon-bst/tree/master/unicode) から入手する
     - 誤って HTML を保存しないように注意
 
 
 ---
 
-**あとは研究して執筆するのみ！**
+あとは研究して執筆するのみ。
+
+**Enjoy & good luck!**
