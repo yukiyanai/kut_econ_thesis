@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This bbl file is created by jecon.bst ver.5.4
+%  The latest jecon.bst is available at
+%  <http://shirotakeda.org/ja/tex-ja/jecon-ja.html>
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Definition of \bysame
+\ifx\undefined\bysame
+\newcommand{\bysame}{\hskip.3em \leavevmode\rule[.5ex]{2.5em}{.3pt}\hskip0.5em}
+\fi
+
+%%% Definition of \bysamejp
+\ifx\undefined\bysamejp
+\newcommand{\bysamejp}{\hskip.2em
+  \leavevmode\rule[.7ex]{2.5em}{.3pt}\hskip0.3em}
+\fi
+
+
+\begin{thebibliography}{xxx}
+
+
+\harvarditem[Angrist and Pischke]{Angrist and Pischke}{2015}{ang2015}
+Angrist, Joshua~D. and J{\"o}rn-Steffen Pischke (2015)  \textit{ Mastering
+  Metrics: The Path from Cause to Effect}, Princeton, NJ: Princeton University
+  Press.
+
+\harvarditem[浅野・矢内]{浅野・矢内}{2018}{mayy2018}
+浅野正彦・矢内勇生 (2018)
+  『Rによる計量政治学』，オーム社．
+
+\harvarditem[Cunningham]{Cunningham}{2021}{cunningham2021}
+Cunningham, Scot (2021)  \textit{ Causal Inference: The Mixtape}, New Haven,
+  CT: Yale University Press.
+
+\harvarditem[西山他]{西山・新谷・川口・奥井}{2019}{nishiyama2019}
+西山慶彦・新谷元嗣・川口大司・奥井亮 (2019)
+  『計量経済学』，有斐閣．
+
+\harvarditem[奥村・黒木]{奥村・黒木}{2020}{okumura2020}
+奥村晴彦・黒木裕介 (2020) 『{\LaTeX} 2{$\varepsilon$}
+  美文書作成入門 第8版』，技術評論社．
+
+\end{thebibliography}
+
