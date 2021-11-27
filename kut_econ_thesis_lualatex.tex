@@ -5,18 +5,23 @@
 %%
 %% Author: 矢内 勇生 (Yuki YANAI)  <yanai.yuki@kochi-tech.ac.jp>
 %% Created: 2021-01-23
+%% Modified:
+%% 2021-11-27 YY: 二段組から一段組に変更, 表紙を追加
+
 
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 
-\documentclass[9pt,a4paper,twocolumn,lualatex,ja=standard]{bxjsarticle}
-\setpagelayout*{top=25truemm,bottom=25truemm,left=15truemm,right=15truemm}
+\documentclass[10.5pt,a4paper,lualatex,ja=standard]{bxjsarticle}
+\setpagelayout*{top=30truemm,bottom=30truemm,left=30truemm,right=30truemm}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{unicode-math}
 \usepackage{color}
 \usepackage{natbib}
 \bibpunct[:\,]{(}{)}{;}{}{}{,}
+\usepackage{flafter}
+
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec}
 
@@ -32,10 +37,10 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{
   \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} 
+  \UseMicrotypeSet[protrusion]{basicmath}
 }{}
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} 
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{}
 \usepackage{bookmark,hyperref}
 \hypersetup{
 $if(title-meta)$
@@ -61,7 +66,7 @@ $endif$
   hyperfootnotes=true,
   setpagesize=false,
   pdfcreator={LaTeX via pandoc from R Markdown}}
-\urlstyle{same} 
+\urlstyle{same}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -71,7 +76,7 @@ $endif$
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\setlength{\emergencystretch}{3em} 
+\setlength{\emergencystretch}{3em}
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
@@ -83,13 +88,13 @@ $endif$
 \usepackage{caption}
 \captionsetup[table]{name=表}
 \captionsetup[figure]{name=図}
-\usepackage{selnolig}  
+\usepackage{selnolig}
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % 
- {% 
+\newenvironment{CSLReferences}[2] %
+ {%
   \setlength{\parindent}{0pt}
   \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
   \ifnum #2 > 0
@@ -115,15 +120,15 @@ $if(subtitle)$
   \makeatother
   \subtitle{\large\gtfamily\bfseries \vskip 0.4em $subtitle$\vspace{-8pt}}
 $endif$
-\author{\large $author$\\ \vspace{-4pt}高知工科大学　経済・マネジメント学群}
-\date{\phantom{AAA}} % 所属と本文の間のスペースを確保するために挿入
+\author{\large $studentid$　$author$\\ 指導教員　$supervisor$}
+\date{} % 日付は表示しない
 
 % 節と小節のタイトルのフォントサイズを設定
-\usepackage{titlesec}
-\titleformat*{\section}{\large\selectfont\bfseries}
-\titleformat*{\subsection}{\normalsize\selectfont\bfseries}
-\titlespacing*{\section}{0pt}{2em}{4pt}
-\titlespacing*{\subsection}{0pt}{1.5em}{4pt}
+%\usepackage{titlesec}
+%\titleformat*{\section}{\large\selectfont\bfseries}
+%\titleformat*{\subsection}{\normalsize\selectfont\bfseries}
+%\titlespacing*{\section}{0pt}{2em}{4pt}
+%\titlespacing*{\subsection}{0pt}{1.5em}{4pt}
 
 \addtolength{\footskip}{10mm} % ページ番号を下にずらす
 \renewcommand{\baselinestretch}{1.2} % 行間を調整
@@ -132,33 +137,68 @@ $endif$
 
 \begin{document}
 
-$if(has-frontmatter)$
-  \frontmatter
+%表紙
+\thispagestyle{empty}
+\begin{center}
+\Large
+高知工科大学　経済・マネジメント学群 \\
+$year$　卒業論文\\
+\vspace{36truemm}
+{\LARGE\gtfamily\bfseries $title$}\\
+\vspace{4truemm}
+$if(subtitle)$
+  {\Large\gtfamily\bfseries $subtitle$}
 $endif$
-$if(title)$
-  \maketitle
-$endif$
-$if(abstract)$
-  \begin{abstract}
-    $abstract$
-  \end{abstract}
-$endif$
+\vfill
+学籍番号　$studentid$ \\
+\vspace{4truemm}
+氏名　$author$ \\
+\vspace{8truemm}
+指導教員氏名　$supervisor$
+\end{center}
 
-$for(include-before)$
-  $include-before$
-$endfor$
+%要旨
+\newpage
+\maketitle
+\thispagestyle{empty}
 
-$if(linestretch)$
-  \setstretch{$linestretch$}
-$endif$
+\noindent
+\textbf{研究背景}
 
-$if(has-frontmatter)$
-  \mainmatter
-$endif$
+$background$
+
+\vspace{4truemm}
+\noindent
+\textbf{研究目的}
+
+$purpose$
+
+\vspace{4truemm}
+\noindent
+\textbf{研究方法}
+
+$method$
+
+\vspace{4truemm}
+\noindent
+\textbf{分析結果}
+
+$result$
+
+\vspace{4truemm}
+\noindent
+\textbf{結論}
+
+$conclusion$
+
+
+\newpage
+\pagenumbering{arabic}
+
 
 $body$
 
-\bibliographystyle{jecon-unicode}
+\bibliographystyle{jecon}
 \bibliography{myrefs}
 
 \end{document}

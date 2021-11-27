@@ -2,6 +2,8 @@
 
 これは、高知工科大学経済・マネジメント学群に提出する卒業論文を R Markdown で書くためのテンプレートです。正しく使うと[このファイル](kut_econ_thesis_rmd_sample.pdf)のようなフォーマットの文書ができます。自由に利用してください。
 
+2021年度から卒論のフォーマットが変更になりました。これに合わせてテンプレートも改変しました（2021-11-27）。
+
 以下の4つのファイルを配布します。
 
 - Rmd ファイルのテンプレート：[kut_econ_thesis_rmarkdown.Rmd](kut_econ_thesis_rmarkdown.Rmd) 
@@ -52,9 +54,9 @@ R Studio からいつもどおりプロジェクトを作る。既存のプロ�
 3. `myrefs.bib` を作り、1のRmdファイルと同じフォルダ（同じ階層）に保存する
   - 必ずこのファイル名にする（ファイル名を変える場合は tex テンプレートの修正が必要）
   - ファイル自体はここで配布するものではなく、ZoteroやJabRefなどを使って自分で作る
-4. `jecon-unicode.bst` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
+4. `jecon.bst` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
   - 武田史郎さんが作った文献スタイルファイル
-  - [ココ](https://github.com/ShiroTakeda/jecon-bst/tree/master/unicode) から入手する
+  - [ココ](https://github.com/ShiroTakeda/jecon-bst/) から入手する
     - 誤って HTML を保存しないように注意
 
 
