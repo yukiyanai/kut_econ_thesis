@@ -160,7 +160,8 @@ $endif$
 %要旨
 \newpage
 \maketitle
-\thispagestyle{empty}
+\thispagestyle{empty} %要旨が2頁以上になるときはコメントアウト
+%\pagenumbering{roman} %要旨が2頁以上になるときはアンコメント
 
 \noindent
 \textbf{研究背景}
@@ -191,10 +192,8 @@ $result$
 
 $conclusion$
 
-
 \newpage
 \pagenumbering{arabic}
-
 
 $body$
 
