@@ -14,6 +14,9 @@
 詳しい使い方はテンプレート内に書いてあるので、よく読んで使ってください。
 
 
+
+
+
 ## 準備
 
 ### IPAexフォントをインストールする
@@ -33,7 +36,7 @@ install.packages("bookdown", dependencies = TRUE)
 ### LaTeX一式をインストールする
 
 - インストール方法については [TeX Wiki](https://texwiki.texjp.org/?TeX%E5%85%A5%E6%89%8B%E6%B3%95) を参照。
-- LaTeX 自体を使う予定がないなら、**tinytex** でもよい。既にLaTeXが入っているパソコンに追加でtinytex を入れてはいけない！
+- LaTeX 自体を使う予定がないなら、**tinytex** でもよい。ただし、**既にLaTeXが入っているパソコンに追加でtinytex を入れてはいけない**！
 ```
 install.packages("tinytex")
 tinytex::install_tinytex()
@@ -57,8 +60,18 @@ R Studio からいつもどおりプロジェクトを作る。既存のプロ�
 4. `jecon.bst` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
   - 武田史郎さんが作った文献スタイルファイル
   - [ココ](https://github.com/ShiroTakeda/jecon-bst/) から入手する
-    - 誤って HTML を保存しないように注意
+    - 誤って HTML ファイルを保存しないように注意
 
+## Windows ユーザへの注意
+
+2021年11月のアップデートで、WindowsのRStudio から、テンプレートを利用したPDFが生成できなくなりました（macOS、Ubuntu では問題ないはず）。Windows を使っている人は、以下の方法でPDFを生成してください。
+
+1. YAML ヘッダに `keep_tex: true` を書く（テンプレートに元々書いてあります）
+2. PDFへの knit を実行し、`.tex` ファイルができるまで待つ
+3. `.tex` ファイルができた時点で knit を強制終了する
+4. `.tex` ファイルを通常の LaTeXのファイルとしてPDFにビルドする。このときlualatex と upbibtex を使う（TeX Live 2021 以降が必要）
+
+あるいは、Windows Subsystem for Linux に Ubuntu をインストールし、その Ubuntu にRStudio Server をインストールして使うという手もあります。
 
 ---
 

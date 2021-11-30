@@ -10,15 +10,15 @@ output:
     latex_engine: lualatex
     template: kut_econ_thesis_lualatex.tex
     citation_package: natbib
+    keep_tex: true
     toc: false
     number_sections: true
-biblio-style: jauthoryear
 background: ここに研究の背景を書く。論文を書くたびにフォーマットに悩まされるのは時間の無駄だ。なんとか楽をしたい。
 purpose: ここに研究の目的を書く。R マークダウンファイルを knit して体裁の整ったPDFファイル生成することを目指す。
 method: ここに研究の方法を書く。knitr、pandoc、LuaLaTeX  を利用する。
 result: ここに研究結果を書く。Rマークダウンファイルで卒論が書けるようになった。
 conclusion: ここに研究の結果（と考察、インプリケーション）を書く。このテンプレートを利用すれば、Rマークダウンだけで卒業論文を書くことができる。Enjoy!
-thanks: ここに謝辞を書く。これは高知工科大学経済・マネジメント学群に提出する卒業論文を書くためのR Markdown 用テンプレートである。草川孝夫先生の発案に基づき矢内勇生が作成した。R Markdown で論文を書くことを可能にしてくれた Yihui Xie 氏に感謝する。このテンプレートに関する問い合わせは、矢内勇生 <[yanai.yuki@kochi-tech.ac.jp](mailto:yanai.yuki@kochi-tech.ac.jp)> まで。
+thanks: ここに謝辞を書く。これは高知工科大学経済・マネジメント学群に提出する卒業論文を書くための R Markdown  用テンプレートである。草川孝夫先生の発案に基づき矢内勇生が作成した。R Markdown で論文を書くことを可能にしてくれた Yihui Xie 氏に感謝する。このテンプレートに関する問い合わせは、矢内勇生 <[yanai.yuki@kochi-tech.ac.jp](mailto:yanai.yuki@kochi-tech.ac.jp)> まで。
 ---
 
 ```{r global_option, include = FALSE}
@@ -247,7 +247,7 @@ plot(scat_plot)
 
 1. 日本語の著者名を書くときも、欧文著者名と同様に姓と名の間にカンマを入れる
   - 例：`author = {浅野, 正彦 and 矢内, 勇生}`
-2. 日本語文献には、`language = {ja}` という項目を追加する
+2. 日本語文献には、`langid = {japanese}` という項目を追加する
 3. 日本語文献には、 `yomi` という項目を追加して、著者または編者の名前の読み方を記す。
   - 外国語文献（アルファベット順）と日本語文献（あいうえお順）を分けてリストを作りたいときは、`yomi` をひらがなで記す。
     - 例：`yomi = {あさの, まさひこ and やない, ゆうき}`
