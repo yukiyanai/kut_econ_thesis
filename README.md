@@ -1,21 +1,20 @@
 # kut_econ_thesis
 
-これは、高知工科大学経済・マネジメント学群に提出する卒業論文を R Markdown で書くためのテンプレートです。正しく使うと[このファイル](kut_econ_thesis_rmd_sample.pdf)のようなフォーマットの文書ができます。自由に利用してください。
+これは、高知工科大学経済・マネジメント学群に提出する卒業論文を R Markdown で書くためのテンプレートです。正しく使うと[このファイル](kut_econ_thesis_sample.pdf)のようなフォーマットの文書ができます。自由に利用してください。
 
-2021年度から卒論のフォーマットが変更になりました。これに合わせてテンプレートも改変しました（2021-11-27）。
+- 2021年度から卒論のフォーマットが変更になりました。これに合わせてテンプレートも改変しました。（2021-11-27）
+- Windows で正しく動作するように、[.latexmkrc](.latexmkrc) を追加しました。(2022-02-05)
 
-以下の4つのファイルを配布します。
 
-- Rmd ファイルのテンプレート：[kut_econ_thesis_rmarkdown.Rmd](kut_econ_thesis_rmarkdown.Rmd) 
-- フォーマットを規定するtex ファイル：[kut_econ_thesis_lualatex.tex](kut_econ_thesis_lualatex.tex)
+以下の5つのファイルを配布します。
+
+- Rmd ファイルのテンプレート：[kut_econ_thesis.Rmd](kut_econ_thesis.Rmd) 
+- フォーマットを規定するtex ファイル：[kut_econ_thesis_template.tex](kut_econ_thesis_template.tex)
 - bibファイルのサンプル：[myrefs.bib](myrefs.bib)
-- 正しくknit できたPDFのサンプル：[kut_econ_thesis_rmd_sample.pdf](kut_econ_thesis_rmd_sample.pdf)
+- latexmk の設定ファイル：[.latexmkrc](.latexmkrc) 
+- 正しくknit できたPDFのサンプル：[kut_econ_thesis_sample.pdf](kut_econ_thesis_sample.pdf)
 
 詳しい使い方はテンプレート内に書いてあるので、よく読んで使ってください。
-
-
-
-
 
 ## 準備
 
@@ -60,19 +59,11 @@ R Studio からいつもどおりプロジェクトを作る。既存のプロ�
 4. `jecon.bst` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
   - 武田史郎さんが作った文献スタイルファイル
   - [ココ](https://github.com/ShiroTakeda/jecon-bst/) から入手する
-    - 誤って HTML ファイルを保存しないように注意
+    - **誤って HTML ファイルを保存しないように注意**
 
-## Windows ユーザへの注意
+## Windows ユーザ（と一部のUbuntuユーザ？）への注意
 
-2021年11月のアップデートで、WindowsのRStudio から、テンプレートを利用したPDFが生成できなくなりました（macOS、Ubuntu では問題ないはず）。Windows を使っている人は、以下の方法でPDFを生成してください。
-
-1. YAML ヘッダに `keep_tex: true` を書く（テンプレートに元々書いてあります）
-2. PDFへの knit を実行し、`.tex` ファイルができるまで待つ
-3. `.tex` ファイルができた時点で knit を強制終了する
-4. `.tex` ファイルを通常の LaTeXのファイルとしてPDFにビルドする。このときlualatex と upbibtex を使う（TeX Live 2021 以降が必要）
-
-あるいは、Windows Subsystem for Linux に Ubuntu をインストールし、その Ubuntu にRStudio Server をインストールして使うという手もあります。
-
+Windows でテンプレのRmd ファイルを knit しようとすると、upbibtex の代わりに bibtex が使われてしまい、bbl ファイルが作成できなくなるようです。latexmk の設定がうまく読み込めていないことが原因だと思われます（Ubuntu でうまくいかない場合も同様）。この問題への対応として、配布する .latexmkrc をknit する Rmd ファイルと同じフォルダに保存してください。ファイル名は変えない（先頭のドットを消さない、余分な拡張子を付けない）ように注意してください。
 ---
 
 あとは研究して執筆するのみ。
