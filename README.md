@@ -9,7 +9,7 @@
 以下の5つのファイルを配布します。
 
 - Rmd ファイルのテンプレート：[kut_econ_thesis.Rmd](kut_econ_thesis.Rmd) 
-- フォーマットを規定するtex ファイル：[kut_econ_thesis_template.tex](kut_econ_thesis_template.tex)
+- フォーマットを規定するtex ファイル：[kut_econ_template.tex](kut_econ_template.tex)
 - bibファイルのサンプル：[myrefs.bib](myrefs.bib)
 - latexmk の設定ファイル：[.latexmkrc](.latexmkrc) 
 - 正しくknit できたPDFのサンプル：[kut_econ_thesis_sample.pdf](kut_econ_thesis_sample.pdf)
@@ -49,10 +49,10 @@ R Studio からいつもどおりプロジェクトを作る。既存のプロ�
 ### プロジェクトフォルダの中に必要なファイル作る・保存する
 
 1. 卒論本体の Rmd ファイルを作る
-  - テンプレート（`kut_econ_thesis_rmarkdown.Rmd`）に従って書く
+  - テンプレート（`kut_econ_thesis.Rmd`）に従って書く
   - ファイル名は自由に付けてよい
   - 本文、分析用コード、図表を作るコードをすべてこのファイルに書く
-2. `kut_econ_thesis_lualatex.tex` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
+2. `kut_econ_template.tex` を1のRmdファイルと同じフォルダ（同じ階層）に保存する
 3. `myrefs.bib` を作り、1のRmdファイルと同じフォルダ（同じ階層）に保存する
   - 必ずこのファイル名にする（ファイル名を変える場合は tex テンプレートの修正が必要）
   - ファイル自体はここで配布するものではなく、ZoteroやJabRefなどを使って自分で作る
