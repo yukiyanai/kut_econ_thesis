@@ -24,21 +24,63 @@
 - インストール方法はテンプレートファイルに書いてある
 
 
-###  Rで必要なパッケージをインストールする。
+###  Rで必要なパッケージをインストールする
 
-**bookdown** パッケージが必要なのでインストールする。他にも追加パッケージのインストールを促されたら、指示に従ってインストールする（RStudio を使っているなら、ポップアップの指示を読んで"Yes" をクリックすればよい）。
+以下のパッケージが必要なので、（インストールしていない場合は）インストールする。
+
+- knitr
+- pacman
+- remotes
+- rmarkdown
+- base64enc
+- digest
+- htmltools
+- jquerylib
+- jsonlite
+- markdown
+- mime
+- rmarkdown
+- tinytex
+- bookdown
+- texreg
+
+これらのパッケージをすべて一挙にインストールしたい場合は、以下のコードを実行する。
+
 ```
-install.packages("bookdown", dependencies = TRUE)
+packs <- c("knitr",
+           "pacman", 
+           "remotes", 
+           "rmarkdown",
+           "base64enc",
+           "digest",
+           "htmltools",
+           "jquerylib",
+           "jsonlite",
+           "markdown",
+           "mime",
+           "rmarkdown",
+           "tinytex",
+           "bookdown",
+           "texreg")
+install.packages(packs, dependencies = TRUE)
 ```
+
+卒論テンプレートを knit するために必要な上記以外のパッケージは、テンプレートを初めて knit するときに自動的にインストールされる（インターネット接続が必要）。
+
 
 
 ### LaTeX一式をインストールする
 
-- インストール方法については [TeX Wiki](https://texwiki.texjp.org/?TeX%E5%85%A5%E6%89%8B%E6%B3%95) を参照。
-- LaTeX 自体を使う予定がないなら、**tinytex** でもよい。ただし、**既にLaTeXが入っているパソコンに追加でtinytex を入れてはいけない**！
+
+- TeX Live（Linux または Windows）または MacTeX（macOS）をインストールする
+  - インストール方法については [TeX Wiki](https://texwiki.texjp.org/?TeX%E5%85%A5%E6%89%8B%E6%B3%95) を参照。
+
+- <s>LaTeX 自体を使う予定がないなら、**tinytex** でもよい。ただし、</s>**既にLaTeXが入っているパソコンに追加でtinytex を入れてはいけない**！
+  - tinytex だとうまくいかないことがあるので、TeX Live (MacTeX) を使う。
+  - tinytex でインストールした LaTeX がある場合は、以下のコマンドをRの Consold で実行してアンインストールする。
+
 ```
-install.packages("tinytex")
-tinytex::install_tinytex()
+tinytex::uninstall_tinytex()
 ```
 
 ###  卒論用の R Project を作る
