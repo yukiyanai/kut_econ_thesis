@@ -77,7 +77,7 @@ install.packages(packs, dependencies = TRUE)
 
 - <s>LaTeX 自体を使う予定がないなら、**tinytex** でもよい。ただし、</s>**既にLaTeXが入っているパソコンに追加でtinytex を入れてはいけない**！
   - tinytex だとうまくいかないことがあるので、TeX Live (MacTeX) を使う。
-  - tinytex でインストールした LaTeX がある場合は、以下のコマンドをRの Consold で実行してアンインストールする。
+  - tinytex でインストールした LaTeX がある場合は、以下のコマンドをRの Console で実行してアンインストールする。
 
 ```
 tinytex::uninstall_tinytex()
