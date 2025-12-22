@@ -2,9 +2,8 @@
 title: "研究内容が一目で分かるタイトルをつける"
 subtitle: "サブタイトルはあってもなくてもよい"
 author: "金松翔人"
-studentid: "1220xxx"
 supervisor: "矢内勇生"
-year: "2021年度"
+year: "2025年度"
 output:
   bookdown::pdf_document2: 
     latex_engine: lualatex
@@ -18,7 +17,7 @@ purpose: ここに研究の目的を書く。R マークダウンファイルを
 method: ここに研究の方法を書く。knitr、pandoc、LuaLaTeX  を利用する。
 result: ここに研究結果を書く。Rマークダウンファイルで卒論が書けるようになった。
 conclusion: ここに研究の結果（と考察、インプリケーション）を書く。このテンプレートを利用すれば、Rマークダウンだけで卒業論文を書くことができる。Enjoy!
-thanks: ここに謝辞を書く。これは高知工科大学経済・マネジメント学群に提出する卒業論文を書くための R Markdown  用テンプレートである。草川孝夫先生の発案に基づき矢内勇生が作成した。デバッグに協力してくれた林良平氏とR Markdown で論文を書くことを可能にしてくれた Yihui Xie 氏に感謝する。このテンプレートに関する問い合わせは、矢内勇生 <[yanai.yuki@kochi-tech.ac.jp](mailto:yanai.yuki@kochi-tech.ac.jp)> まで。
+thanks: ここに謝辞を書く。これは高知工科大学経済・マネジメント学群に提出する卒業論文を書くための R Markdown  用テンプレートである。草川孝夫先生の発案に基づき矢内勇生が作成した。デバッグに協力してくれた林良平先生とR Markdown で論文を書くことを可能にしてくれた Yihui Xie 氏に感謝する。このテンプレートに関する問い合わせは、矢内勇生 <[yanai.yuki@kochi-tech.ac.jp](mailto:yanai.yuki@kochi-tech.ac.jp)> まで。
 ---
 
 ```{r global_option, include = FALSE}

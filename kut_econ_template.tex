@@ -1,4 +1,4 @@
-%% kut_econ_template_mac.tex
+%% kut_econ_template.tex
 %%
 %% 高知工科大学 経済・マネジメント学群 卒論テンプレート（macOS用）
 %% R Markdown -> PDF 用
@@ -10,16 +10,22 @@
 %% 2022-02-05 YY:
 %%    kut_econ_thesis_lualatex.tex をベースに、OSごとにテンプレを分割。
 %%    tabularx を追加。Rコードのshade を有効化。
+%% 2025-12-22 YY:
+%%    pandoc 対策の修正
+%%    2025年度から学籍番号非表示に変更
+%%    誤字脱字の修正
 
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+
+\providecommand{\pandocbounded}[1]{#1} %% Fix: thanks to Kusakawa-sensei
 
 \documentclass[lualatex,
                a4paper,
                10.5pt,
                ja=standard,
                jafont=ipaex]{bxjsarticle}
-% フォントの設定: IPAex を採用
+% フォントの設定: IPAex を採用（Rで作った図のフォントと揃えるため）
 % 原ノ味フォントを使う場合 -> jafont=hiragino-pron を削除
 
 \setpagelayout*{top=30truemm,bottom=30truemm,left=30truemm,right=30truemm}
@@ -129,7 +135,7 @@ $if(subtitle)$
   \makeatother
   \subtitle{\large\gtfamily\bfseries \vskip 0.4em $subtitle$\vspace{-8pt}}
 $endif$
-\author{\large $studentid$　$author$\\ 指導教員　$supervisor$}
+\author{\large $author$\\ 指導教員　$supervisor$}
 \date{} % 日付は表示しない
 
 % 節と小節のタイトルのフォントサイズを設定
@@ -159,8 +165,6 @@ $if(subtitle)$
   {\Large\gtfamily\bfseries $subtitle$}
 $endif$
 \vfill
-学籍番号　$studentid$ \\
-\vspace{4truemm}
 氏名　$author$ \\
 \vspace{8truemm}
 指導教員氏名　$supervisor$
