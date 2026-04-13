@@ -1,5 +1,7 @@
 # kut_econ_thesis
 
+**2026年度からは [Quarto版](https://github.com/yukiyanai/kut_econ_thesis_quarto) を使ってください。**
+
 これは、高知工科大学経済・マネジメント学群に提出する卒業論文を R Markdown で書くためのテンプレートです。正しく使うと[このファイル](kut_econ_thesis_sample.pdf)のようなフォーマットの文書ができます。自由に利用してください。
 
 - 2021年度から卒論のフォーマットが変更になりました。これに合わせてテンプレートも改変しました。（2021-11-27）
